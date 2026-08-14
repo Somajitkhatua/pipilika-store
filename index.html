@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pipilika — Handcrafted Pipli Appliqué & Chandua</title>
+  <meta name="description" content="Authentic Pipli appliqué art from Odisha. Shop handcrafted Chandua, wall hangings, umbrellas and more. Made by master artisans." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+/* ============================================================
+   Pipilika — Pipli Appliqué store
+   ============================================================ */
+
+/* ---------- Reset & tokens ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink: #3d2c1e;
+  --ink-soft: #6b5540;
+  --cream: #fff8ec;
+  --cream-2: #fff0d8;
+  --paper: #ffffff;
+  --saffron: #f5471f;
+  --saffron-dark: #d33a12;
+  --gold: #f9c74f;
+  --teal: #0b7285;
+  --teal-dark: #085e6d;
+  --rose: #c2255c;
+  --purple: #862e9c;
+  --green: #2b8a3e;
+  --shadow: 0 10px 30px rgba(61, 44, 30, 0.12);
+  --shadow-lg: 0 24px 60px rgba(61, 44, 30, 0.18);
+  --radius: 18px;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, textarea { font-family: inherit; font-size: 1rem; }
+
+.container { width: min(1180px, 92%); margin-inline: auto; }
+.section { padding: 90px 0; }
+
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.2; }
+h2 { font-size: clamp(2rem, 4vw, 2.9rem); margin-bottom: 0.8rem; }
+h2 em { font-style: italic; color: var(--saffron); }
+.lead { color: var(--ink-soft); max-width: 560px; margin-inline: auto; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 0.6rem;
+}
+
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+.section-head.center { flex-direction: column; align-items: center; text-align: center; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 26px; border-radius: 999px; font-weight: 700; font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  border: 2px solid transparent;
+}
+.btn-primary { background: var(--saffron); color: #fff; box-shadow: 0 8px 20px rgba(245, 71, 31, 0.35); }
+.btn-primary:hover { background: var(--saffron-dark); transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--cream); }
+.btn-block { width: 100%; }
+.btn-small { padding: 9px 18px; font-size: 0.85rem; }
+
+/* ---------- Brand ---------- */
+.brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand-mark {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: #fff; display: grid; place-items: center; font-size: 1.1rem;
+  box-shadow: 0 6px 14px rgba(245, 71, 31, 0.35);
+}
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-text strong { font-family: var(--font-display); font-size: 1.25rem; }
+.brand-text em { font-style: normal; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--ink-soft); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 248, 236, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(61, 44, 30, 0.08);
+}
+.nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 0; }
+.nav-links { display: flex; gap: 6px; align-items: center; }
+.nav-links a { padding: 8px 12px; border-radius: 999px; font-weight: 600; font-size: 0.9rem; color: var(--ink-soft); transition: 0.2s; }
+.nav-links a:hover { color: var(--ink); background: rgba(245, 71, 31, 0.08); }
+.header-actions { display: flex; align-items: center; gap: 10px; }
+
+.icon-btn {
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--cream-2); transition: 0.2s;
+}
+.icon-btn:hover { background: var(--gold); }
+.icon-btn svg { width: 20px; height: 20px; }
+
+.cart-btn { position: relative; width: 46px; height: 46px; border-radius: 50%; background: var(--ink); color: var(--cream); display: grid; place-items: center; transition: 0.2s; }
+.cart-btn:hover { background: var(--saffron); }
+.cart-btn svg { width: 21px; height: 21px; }
+.cart-count {
+  position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 5px;
+  background: var(--saffron); color: #fff; border-radius: 999px; font-size: 0.7rem; font-weight: 700;
+  display: grid; place-items: center; border: 2px solid var(--cream);
+}
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; width: 42px; height: 42px; border-radius: 50%; background: var(--cream-2); align-items: center; justify-content: center; }
+.nav-toggle span { width: 20px; height: 2px; background: var(--ink); border-radius: 2px; transition: 0.3s; }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; padding: 70px 0 0; }
+.hero::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(720px 420px at 85% 10%, rgba(249, 199, 79, 0.35), transparent 60%),
+    radial-gradient(520px 420px at 8% 80%, rgba(11, 114, 133, 0.12), transparent 60%),
+    linear-gradient(180deg, var(--cream) 0%, var(--cream-2) 100%);
+}
+.hero-deco { position: absolute; right: -8%; top: 26%; width: 520px; height: 520px; border-radius: 50%; border: 2px dashed rgba(245, 71, 31, 0.25); animation: spin 60s linear infinite; }
+.hero-deco::before { content: ""; position: absolute; inset: 64px; border-radius: 50%; border: 2px dashed rgba(11, 114, 133, 0.3); }
+.hero-deco::after { content: "☀"; position: absolute; top: 6px; right: 90px; font-size: 2rem; }
+
+.hero-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 50px; align-items: center; padding-bottom: 40px; }
+.hero-copy h1 { font-size: clamp(2.6rem, 5.6vw, 4.4rem); margin: 10px 0 18px; }
+.hero-copy h1 em { color: var(--saffron); }
+.hero-sub { font-size: 1.08rem; color: var(--ink-soft); max-width: 480px; margin-bottom: 28px; }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 34px; }
+
+.hero-stats { display: flex; gap: 30px; list-style: none; flex-wrap: wrap; }
+.hero-stats strong { font-family: var(--font-display); font-size: 1.6rem; display: block; line-height: 1.1; }
+.hero-stats span { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* Hero art: layered fabric canvas */
+.hero-art { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.art-canvas {
+  position: relative; width: min(460px, 90vw); aspect-ratio: 1; border-radius: 28px;
+  background:
+    radial-gradient(60% 60% at 50% 50%, rgba(255,255,255,0.22), transparent 70%),
+    linear-gradient(135deg, #f5471f, #e6390e 45%, #f9c74f 130%);
+  box-shadow: var(--shadow-lg), inset 0 0 0 14px rgba(255,255,255,0.14), inset 0 0 0 16px rgba(255,248,236,0.9), inset 0 0 0 30px rgba(245,71,31,0.9), inset 0 0 0 32px rgba(255,255,255,0.16);
+  animation: float 7s ease-in-out infinite;
+}
+.hero-caption { font-size: 0.85rem; color: var(--ink-soft); font-style: italic; }
+
+/* Shared geometric motifs drawn in pure CSS */
+.motif { position: absolute; border-radius: 50%; }
+.m-sun {
+  width: 120px; height: 120px; top: 16%; left: 50%; transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 40%, #ffe066, #f59f00 70%);
+  box-shadow: inset 0 0 0 12px var(--cream), inset 0 0 0 14px rgba(245,159,0,0.7), 0 6px 18px rgba(0,0,0,0.18);
+}
+.m-sun::after { content: ""; position: absolute; inset: -22px; border-radius: 50%; border: 4px dashed rgba(255, 224, 102, 0.9); }
+.m-flower {
+  width: 88px; height: 88px; top: 54%; left: 20%;
+  background: radial-gradient(circle, #fff 0 20%, #f5471f 21% 44%, #fff 45% 62%, #c2255c 63%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.16);
+}
+.m-bird {
+  width: 64px; height: 64px; right: 14%; top: 40%;
+  background: conic-gradient(from 30deg, #0b7285 0 60%, #fff 60% 70%, #0b7285 70%);
+  clip-path: polygon(50% 0, 92% 38%, 58% 44%, 95% 84%, 40% 55%, 26% 96%, 14% 52%, 52% 32%, 8% 24%);
+}
+.m-leaf {
+  width: 52px; height: 52px; left: 10%; bottom: 14%;
+  background: radial-gradient(circle at 50% 45%, #7fd08a, #2b8a3e 72%);
+  clip-path: circle(50%);
+  transform: rotate(45deg);
+}
+.m-tassel { width: 10px; height: 70px; background: #f9c74f; border-radius: 4px; bottom: -38px; }
+.m-tassel::after { content: ""; position: absolute; bottom: -14px; left: -6px; width: 22px; height: 22px; background: rgba(194, 37, 92, 0.92); border-radius: 50%; }
+.t1 { left: 18%; } .t2 { left: 50%; transform: translateX(-50%); } .t3 { right: 18%; }
+
+/* Marquee */
+.marquee { background: var(--ink); color: var(--cream); overflow: hidden; padding: 14px 0; margin-top: 10px; }
+.marquee-track { display: flex; gap: 50px; white-space: nowrap; animation: marquee 22s linear infinite; width: max-content; }
+.marquee span { font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ---------- Story ---------- */
+.story { background: var(--paper); }
+.story-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
+.story-copy p { color: var(--ink-soft); margin-bottom: 16px; }
+.story-frame {
+  position: relative; width: min(360px, 80vw); margin-inline: auto;
+  aspect-ratio: 3/4; border-radius: 28px;
+  background: radial-gradient(60% 60% at 50% 35%, rgba(255,255,255,0.16), transparent 70%), linear-gradient(160deg, #0b7285, #063a46);
+  box-shadow: var(--shadow-lg);
+  padding: 26px 10px;
+  display: flex; align-items: flex-end; justify-content: center;
+  border: 10px solid var(--gold);
+}
+.story-frame p { color: #fff; text-align: center; font-family: var(--font-display); font-size: 1.05rem; }
+.story-frame .m-sun { width: 120px; height: 120px; top: 12%; box-shadow: inset 0 0 0 10px rgba(255,248,236,0.4), inset 0 0 0 12px rgba(245,159,0,0.7); }
+.story-frame .m-flower { top: 46%; left: 12%; transform: scale(0.85); }
+.story-frame::after { content: ""; position: absolute; inset: -26px; border: 2px dashed rgba(249, 199, 79, 0.6); border-radius: 36px; }
+
+.story-points { display: grid; gap: 16px; margin-top: 12px; }
+.story-points > div { display: flex; gap: 14px; align-items: flex-start; background: var(--cream); border-radius: var(--radius); padding: 16px; border: 1px solid rgba(61,44,30,0.08); }
+.story-points span { font-size: 1.5rem; }
+.story-points strong { font-family: var(--font-display); font-size: 1.02rem; }
+.story-points p { font-size: 0.9rem; color: var(--ink-soft); margin: 0; }
+
+/* ---------- Shop ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 26px; }
+
+.product-card {
+  background: var(--paper); border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow); transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(61,44,30,0.06);
+  display: flex; flex-direction: column;
+}
+.product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.product-art {
+  position: relative; aspect-ratio: 1; display: grid; place-items: center;
+  background: linear-gradient(140deg, var(--bg1), var(--bg2));
+}
+.product-art .mat {
+  width: 74%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%), var(--matc, #fff);
+  display: grid; place-items: center;
+  box-shadow: inset 0 0 0 8px rgba(0,0,0,0.06), 0 8px 22px rgba(0,0,0,0.22);
+}
+.product-art .mini-sun {
+  width: 52%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #ffe066, #f59f00 72%);
+  box-shadow: inset 0 0 0 8px rgba(255,255,255,0.25), 0 5px 12px rgba(0,0,0,0.2);
+}
+.mini-flower {
+  position: absolute; width: 44px; height: 44px;
+  background: radial-gradient(circle, #fff 0 20%, #f5471f 21% 44%, #fff 45% 62%, #c2255c 63%);
+  border-radius: 50%;
+}
+.mini-bird {
+  position: absolute; width: 42px; height: 42px;
+  background: conic-gradient(from 30deg, #0b7285 0 60%, #fff 60% 70%, #0b7285 70%);
+  clip-path: polygon(50% 0, 92% 38%, 58% 44%, 95% 84%, 40% 55%, 26% 96%, 14% 52%, 52% 32%, 8% 24%);
+}
+.mini-leaf {
+  position: absolute; width: 40px; height: 40px;
+  background: radial-gradient(circle at 50% 45%, #7fd08a, #2b8a3e 72%);
+  clip-path: circle(50%); transform: rotate(45deg);
+}
+.p-tassel { position: absolute; width: 7px; height: 46px; background: var(--gold); border-radius: 3px; bottom: 6px; }
+.p-tassel.p1 { left: 18%; } .p-tassel.p2 { left: 50%; transform: translateX(-50%); } .p-tassel.p3 { right: 18%; }
+
+.product-tag {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  background: rgba(255,255,255,0.92); color: var(--saffron); font-weight: 700; font-size: 0.72rem;
+  padding: 5px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+.product-badge {
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  background: var(--teal); color: #fff; font-weight: 700; font-size: 0.7rem;
+  padding: 5px 10px; border-radius: 999px; box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+.product-info { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.product-cat { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--teal); font-weight: 700; }
+.product-name { font-family: var(--font-display); font-size: 1.15rem; }
+.product-desc { font-size: 0.85rem; color: var(--ink-soft); }
+.product-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px; }
+.product-price { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; }
+.product-price .was { font-size: 0.85rem; color: var(--ink-soft); margin-right: 6px; font-weight: 400; text-decoration: line-through; }
+.add-btn {
+  background: var(--ink); color: var(--cream); padding: 9px 16px; border-radius: 999px; font-weight: 700; font-size: 0.85rem;
+  transition: 0.2s;
+}
+.add-btn:hover { background: var(--saffron); transform: scale(1.04); }
+
+.shop-note { margin-top: 40px; text-align: center; color: var(--ink-soft); }
+.shop-note a { color: var(--saffron); font-weight: 700; }
+.shop-note a:hover { text-decoration: underline; }
+
+/* Chips (filters) */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  padding: 8px 16px; border-radius: 999px; font-weight: 600; font-size: 0.85rem;
+  background: var(--paper); border: 1px solid rgba(61,44,30,0.12); color: var(--ink-soft); transition: 0.2s;
+}
+.chip:hover { border-color: var(--saffron); color: var(--saffron); }
+.chip.active { background: var(--saffron); color: #fff; border-color: var(--saffron); }
+
+/* ---------- Customizer ---------- */
+.customize { background: linear-gradient(180deg, var(--cream-2), var(--cream)); }
+.customizer {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;
+  background: var(--paper); border-radius: 28px; padding: 34px; box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(61,44,30,0.06);
+}
+.customizer-preview { position: relative; display: grid; place-items: center; align-self: center; }
+.cz-art {
+  position: relative; width: min(360px, 100%); aspect-ratio: 1; border-radius: 24px;
+  background: var(--czc1, #f5471f);
+  transition: background 0.6s ease;
+  box-shadow: inset 0 0 0 12px rgba(255,255,255,0.16), inset 0 0 0 14px var(--cream), inset 0 0 0 28px var(--czc1), inset 0 0 0 30px rgba(255,255,255,0.18), var(--shadow-lg);
+  animation: float 7s ease-in-out infinite;
+}
+.cz-motif { position: absolute; border-radius: 50%; }
+.cz-sun {
+  width: 100px; height: 100px; top: 18%; left: 50%; transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 40%, #ffe066, #f59f00 70%);
+  box-shadow: inset 0 0 0 10px rgba(255,255,255,0.3);
+}
+.cz-sun::after { content: ""; position: absolute; inset: -18px; border-radius: 50%; border: 4px dashed rgba(255, 224, 102, 0.9); }
+.cz-flower {
+  width: 66px; height: 66px; top: 52%; left: 16%;
+  background: radial-gradient(circle, #fff 0 20%, #f5471f 21% 44%, #fff 45% 62%, #c2255c 63%);
+}
+.cz-leaf { width: 40px; height: 40px; right: 12%; bottom: 16%; background: radial-gradient(circle at 50% 45%, #7fd08a, #2b8a3e 72%); clip-path: circle(50%); transform: rotate(45deg); }
+.cz-bird { width: 48px; height: 48px; right: 16%; top: 42%; background: conic-gradient(from 30deg, #0b7285 0 60%, #fff 60% 70%, #0b7285 70%); clip-path: polygon(50% 0, 92% 38%, 58% 44%, 95% 84%, 40% 55%, 26% 96%, 14% 52%, 52% 32%, 8% 24%); }
+.cz-tassel { width: 8px; height: 56px; background: var(--czc2, #f9c74f); border-radius: 4px; bottom: -22px; }
+.cz-tassel::after { content: ""; position: absolute; bottom: -12px; left: -5px; width: 18px; height: 18px; background: var(--czc2, #f9c74f); border-radius: 50%; }
+.ct1 { left: 18%; } .ct2 { left: 50%; transform: translateX(-50%); } .ct3 { right: 18%; }
+.cz-flower::after { content: ""; position: absolute; inset: -14px; border: 3px dashed rgba(255,255,255,0.7); border-radius: 50%; }
+
+.customizer-form { display: flex; flex-direction: column; gap: 22px; }
+.form-group label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px; }
+.option-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.opt {
+  padding: 10px 14px; border-radius: 12px; font-weight: 600; font-size: 0.88rem;
+  border: 2px solid rgba(61,44,30,0.12); background: var(--paper); transition: 0.2s; text-align: center;
+}
+.opt small { display: block; font-weight: 400; font-size: 0.7rem; color: var(--ink-soft); }
+.opt:hover { border-color: var(--teal); }
+.opt.active { border-color: var(--teal); background: rgba(11, 114, 133, 0.08); color: var(--teal-dark); }
+
+.swatches { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 0.75rem; font-weight: 600; color: var(--ink-soft); }
+.swatch span {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--c1), var(--c2));
+  border: 3px solid transparent; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: 0.2s;
+}
+.swatch:hover span { transform: scale(1.1); }
+.swatch.active { color: var(--ink); }
+.swatch.active span { border-color: var(--ink); box-shadow: 0 0 0 3px var(--gold); }
+
+.customizer-form input[type="text"] {
+  width: 100%; padding: 12px 14px; border-radius: 12px; border: 2px solid rgba(61,44,30,0.12);
+  background: var(--cream); transition: 0.2s;
+}
+.customizer-form input:focus { outline: none; border-color: var(--saffron); background: #fff; }
+
+.cz-price { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--saffron); }
+.cz-note { font-size: 0.8rem; color: var(--ink-soft); text-align: center; }
+
+/* ---------- Testimonials ---------- */
+.testimonials { background: var(--paper); }
+.t-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; }
+.t-card {
+  background: var(--cream); border-radius: var(--radius); padding: 26px; position: relative;
+  border: 1px solid rgba(61,44,30,0.07); display: flex; flex-direction: column; gap: 14px;
+}
+.t-stars { color: var(--gold); letter-spacing: 2px; }
+.t-card blockquote { font-style: italic; color: var(--ink-soft); font-size: 0.95rem; }
+.t-who { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+.t-avatar {
+  width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center;
+  color: #fff; font-weight: 700; background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+}
+.t-who strong { display: block; font-family: var(--font-display); }
+.t-who span { font-size: 0.78rem; color: var(--ink-soft); }
+
+/* ---------- Contact ---------- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.contact-list { list-style: none; margin-top: 18px; display: grid; gap: 10px; }
+.contact-list a { color: var(--ink); font-weight: 600; }
+.contact-list a:hover { color: var(--saffron); }
+.contact-form {
+  background: var(--paper); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow);
+  display: grid; gap: 14px; border: 1px solid rgba(61,44,30,0.06);
+}
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 12px 14px; border-radius: 12px; border: 2px solid rgba(61,44,30,0.12); resize: vertical;
+}
+.contact-form input:focus, .contact-form textarea:focus, .news-form input:focus { outline: none; border-color: var(--saffron); }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--ink); color: var(--cream); padding: 60px 0 0; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 40px; }
+.footer-grid h4 { font-family: var(--font-body); font-weight: 700; margin-bottom: 14px; font-size: 0.95rem; color: var(--gold); }
+.footer-grid > div { display: flex; flex-direction: column; }
+.footer-grid p { color: rgba(255, 248, 236, 0.7); font-size: 0.9rem; margin-top: 12px; }
+.footer-grid a { color: rgba(255, 248, 236, 0.85); font-size: 0.9rem; padding: 4px 0; transition: 0.2s; }
+.footer-grid a:hover { color: var(--gold); transform: translateX(3px); }
+.brand-footer .brand-text em { color: rgba(255, 248, 236, 0.7); }
+.news-form { display: flex; gap: 8px; margin-top: 12px; }
+.news-form input { flex: 1; padding: 10px 14px; border-radius: 999px; border: none; background: rgba(255,255,255,0.12); color: #fff; }
+.news-form input::placeholder { color: rgba(255,255,255,0.5); }
+.footer-bottom { border-top: 1px solid rgba(255, 248, 236, 0.15); padding: 18px 0; font-size: 0.82rem; color: rgba(255, 248, 236, 0.6); }
+
+/* ---------- Cart drawer ---------- */
+.overlay {
+  position: fixed; inset: 0; background: rgba(30, 20, 10, 0.5); z-index: 60;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease; backdrop-filter: blur(2px);
+}
+.overlay.show { opacity: 1; pointer-events: auto; }
+
+.cart-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(420px, 94vw); z-index: 70;
+  background: var(--cream); display: flex; flex-direction: column;
+  transform: translateX(105%); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: -20px 0 50px rgba(0,0,0,0.25);
+}
+.cart-drawer.open { transform: translateX(0); }
+.cart-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 22px; border-bottom: 1px solid rgba(61,44,30,0.1); }
+.cart-head h3 { font-size: 1.4rem; }
+.cart-body { flex: 1; overflow-y: auto; padding: 10px 22px; }
+.cart-empty { text-align: center; color: var(--ink-soft); margin-top: 60px; }
+.cart-item {
+  display: grid; grid-template-columns: 62px 1fr auto; gap: 14px; align-items: center;
+  padding: 14px 0; border-bottom: 1px dashed rgba(61,44,30,0.15);
+}
+.cart-item .thumb {
+  width: 62px; height: 62px; border-radius: 12px; display: grid; place-items: center;
+  background: linear-gradient(140deg, var(--bg1), var(--bg2)); position: relative;
+}
+.cart-item .thumb .mini-sun { width: 60%; box-shadow: inset 0 0 0 5px rgba(255,255,255,0.25); }
+.cart-item .name { font-weight: 700; font-size: 0.92rem; }
+.cart-item .sub { font-size: 0.78rem; color: var(--ink-soft); }
+.cart-item .price { font-weight: 700; font-family: var(--font-display); }
+.qty { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
+.qty button { width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: var(--cream); font-weight: 700; line-height: 1; }
+.qty button:hover { background: var(--saffron); }
+.qty span { min-width: 18px; text-align: center; font-weight: 700; }
+.item-remove { color: var(--saffron); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+.item-remove:hover { text-decoration: underline; }
+.cart-foot { padding: 18px 22px; border-top: 1px solid rgba(61,44,30,0.1); background: var(--paper); }
+.cart-total { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-size: 1.05rem; }
+.cart-total strong { font-family: var(--font-display); font-size: 1.5rem; color: var(--saffron); }
+.mini-note { font-size: 0.75rem; color: var(--ink-soft); text-align: center; margin-top: 10px; }
+
+/* ---------- Modals ---------- */
+.modal {
+  position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 20px;
+  background: rgba(30, 20, 10, 0.55); opacity: 0; pointer-events: none; transition: opacity 0.25s ease; backdrop-filter: blur(3px);
+}
+.modal.show { opacity: 1; pointer-events: auto; }
+.modal-card {
+  width: min(480px, 94vw); background: var(--cream); border-radius: 24px; overflow: hidden;
+  transform: translateY(14px); transition: transform 0.3s ease; box-shadow: var(--shadow-lg); max-height: 90vh; overflow-y: auto;
+}
+.modal.show .modal-card { transform: translateY(0); }
+.modal-head { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid rgba(61,44,30,0.1); }
+.modal-head h3 { font-size: 1.4rem; }
+.modal-body { padding: 22px 24px; display: grid; gap: 16px; }
+.modal-body label { font-size: 0.85rem; font-weight: 700; display: grid; gap: 6px; }
+.modal-body input, .modal-body textarea {
+  padding: 11px 14px; border-radius: 12px; border: 2px solid rgba(61,44,30,0.12); font-weight: 400; resize: vertical;
+}
+.modal-body input:focus, .modal-body textarea:focus { outline: none; border-color: var(--saffron); }
+.pay-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.pay-options .opt { padding: 10px 18px; }
+.modal-summary { font-size: 0.82rem; color: var(--ink-soft); text-align: center; }
+.modal-foot { padding: 18px 24px 24px; }
+.modal-card.center { text-align: center; padding: 40px 30px; }
+.success-emoji { font-size: 3.5rem; margin-bottom: 8px; animation: pop 0.5s ease; }
+
+/* ---------- Chat ---------- */
+.chat-fab {
+  position: fixed; bottom: 22px; right: 22px; z-index: 65; width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--saffron), var(--rose)); color: #fff; display: grid; place-items: center;
+  box-shadow: 0 10px 26px rgba(194, 37, 92, 0.45); transition: transform 0.2s ease;
+}
+.chat-fab:hover { transform: scale(1.08) rotate(8deg); }
+.chat-fab svg { width: 28px; height: 28px; }
+.chat-fab .ping { position: absolute; top: 0; right: 0; width: 14px; height: 14px; background: #2b8a3e; border: 2px solid #fff; border-radius: 50%; animation: pop 1.2s infinite; }
+
+.chat-window {
+  position: fixed; bottom: 96px; right: 22px; z-index: 66; width: min(380px, 92vw); height: min(520px, 70vh);
+  background: var(--paper); border-radius: 22px; box-shadow: var(--shadow-lg); overflow: hidden;
+  display: flex; flex-direction: column; transform-origin: bottom right;
+  transform: scale(0.6) translateY(30px); opacity: 0; pointer-events: none; transition: 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.chat-window.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: auto; }
+.chat-head {
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: #fff;
+}
+.chat-avatar {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--gold); color: var(--ink);
+  display: grid; place-items: center; font-weight: 800; font-family: var(--font-display);
+}
+.chat-head strong { font-size: 0.95rem; display: block; }
+.chat-status { font-size: 0.72rem; opacity: 0.85; display: flex; align-items: center; gap: 5px; }
+.chat-status i { width: 8px; height: 8px; border-radius: 50%; background: #51cf66; display: inline-block; }
+.chat-head .icon-btn { background: rgba(255,255,255,0.15); color: #fff; }
+.chat-head .icon-btn:hover { background: rgba(255,255,255,0.3); }
+
+.chat-body { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; background: var(--cream); }
+.msg { max-width: 84%; padding: 10px 14px; border-radius: 16px; font-size: 0.88rem; line-height: 1.5; white-space: pre-line; }
+.msg.bot { background: var(--paper); border: 1px solid rgba(61,44,30,0.08); border-top-left-radius: 4px; align-self: flex-start; box-shadow: 0 3px 8px rgba(0,0,0,0.05); }
+.msg.user { background: var(--saffron); color: #fff; border-top-right-radius: 4px; align-self: flex-end; }
+.msg.typing { color: var(--ink-soft); font-style: italic; }
+
+.chat-suggest { display: flex; gap: 6px; padding: 0 12px; padding-top: 2px; flex-wrap: wrap; background: var(--cream); }
+.sug { font-size: 0.72rem; padding: 6px 12px; border-radius: 999px; background: #fff; border: 1px solid rgba(61,44,30,0.14); color: var(--teal); font-weight: 600; transition: 0.2s; }
+.sug:hover { background: var(--teal); color: #fff; }
+
+.chat-input { display: flex; gap: 8px; padding: 12px; border-top: 1px solid rgba(61,44,30,0.08); background: var(--paper); }
+.chat-input input {
+  flex: 1; padding: 11px 14px; border-radius: 999px; border: 2px solid rgba(61,44,30,0.14); font-size: 0.9rem;
+}
+.chat-input input:focus { outline: none; border-color: var(--teal); }
+.chat-input button {
+  width: 44px; height: 44px; border-radius: 50%; background: var(--teal); color: #fff; font-size: 1.1rem; transition: 0.2s;
+}
+.chat-input button:hover { background: var(--saffron); }
+
+/* chat tracking card */
+.msg.chat-html { max-width: 92%; background: var(--paper); border: 1px solid rgba(61,44,30,0.08); border-top-left-radius: 4px; }
+.chat-track { font-size: 0.84rem; }
+.ct-eta { margin-bottom: 10px; padding: 10px 12px; border-radius: 12px; background: rgba(249,199,79,0.18); border: 1px solid rgba(249,199,79,0.5); }
+.ct-eta strong { color: var(--saffron); font-size: 1.05rem; }
+.ct-eta b { color: var(--teal-dark); }
+.chat-track ul { list-style: none; display: grid; gap: 7px; margin: 0 0 10px; }
+.chat-track li { display: flex; gap: 10px; align-items: flex-start; }
+.chat-track li span { font-size: 1rem; }
+.chat-track li b { display: block; font-size: 0.82rem; }
+.chat-track li em { font-style: normal; font-size: 0.74rem; color: var(--ink-soft); }
+.ct-link { display: inline-block; color: var(--saffron); font-weight: 700; font-size: 0.8rem; }
+.ct-link:hover { text-decoration: underline; }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed; bottom: 26px; left: 50%; transform: translate(-50%, 80px); z-index: 90;
+  background: var(--ink); color: var(--cream); padding: 13px 22px; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
+  box-shadow: var(--shadow-lg); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1); opacity: 0;
+}
+.toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+/* ---------- Tracking & delivery ---------- */
+.order-id {
+  margin: 6px auto 14px; display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(245, 71, 31, 0.08); padding: 8px 16px; border-radius: 999px; font-size: 0.85rem;
+}
+.order-id span { color: var(--ink-soft); }
+.order-id strong { font-family: var(--font-display); color: var(--saffron); letter-spacing: 0.04em; }
+
+.track-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 18px 0 8px; }
+.track-actions a { text-decoration: none; }
+
+#trackArea { width: 100%; text-align: left; }
+#trackArea h4, .track-result h4 {
+  font-family: var(--font-body); font-weight: 700; font-size: 1.02rem;
+  margin: 18px 0 14px; text-align: center; line-height: 1.5;
+}
+.days-left { color: var(--saffron); font-family: var(--font-display); font-size: 1.15rem; }
+.eta-date { color: var(--teal-dark); font-family: var(--font-display); }
+
+.t-steps { display: grid; gap: 8px; margin-bottom: 6px; }
+.t-step {
+  display: grid; grid-template-columns: 30px 1fr auto; gap: 12px; align-items: center;
+  background: var(--paper); border: 1px solid rgba(61,44,30,0.08); border-radius: 14px; padding: 12px 14px; position: relative;
+}
+.t-step::before {
+  content: ""; position: absolute; left: 28px; top: -6px; width: 2px; height: 12px;
+  background: rgba(61,44,30,0.12);
+}
+.t-step:first-child::before { display: none; }
+.t-step.done { border-color: rgba(43, 138, 62, 0.4); }
+.t-step.done::before { background: #2b8a3e; }
+.t-step.eta { border-color: var(--gold); background: rgba(249, 199, 79, 0.12); }
+.t-dot {
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(61,44,30,0.12); color: var(--ink-soft); font-weight: 700; font-size: 0.85rem;
+}
+.t-step.done .t-dot { background: #2b8a3e; color: #fff; }
+.t-step.eta .t-dot { background: var(--gold); }
+.t-step strong { display: block; font-size: 0.92rem; }
+.t-step small { color: var(--ink-soft); font-size: 0.76rem; }
+.t-step em { font-style: normal; font-size: 0.75rem; color: var(--ink-soft); white-space: nowrap; }
+
+.t-map h4 { text-align: left; }
+.t-map iframe { width: 100%; height: 240px; border: 0; border-radius: 16px; box-shadow: var(--shadow); }
+.t-map-note { font-size: 0.82rem; color: var(--ink-soft); margin: 8px 0 12px; }
+.t-map-note strong { color: var(--teal-dark); }
+.t-map .btn { margin-top: 4px; }
+
+.track-form {
+  display: flex; gap: 10px; max-width: 460px; margin: 8px auto 34px;
+  background: var(--paper); padding: 8px; border-radius: 999px; box-shadow: var(--shadow); border: 1px solid rgba(61,44,30,0.06);
+}
+.track-form input { flex: 1; padding: 10px 16px; border: none; background: transparent; font-weight: 600; letter-spacing: 0.06em; }
+.track-form input:focus { outline: none; }
+.track-form .btn { flex-shrink: 0; }
+.track-result { max-width: 700px; margin-inline: auto; }
+.track-result h4 { margin-top: 0; }
+
+/* ---------- Animations & utilities ---------- */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pop { 0% { transform: scale(0.6); } 100% { transform: scale(1); } }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .hero-inner, .customizer, .story-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-art { order: -1; }
+  .story-art { margin-bottom: 10px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  .section { padding: 60px 0; }
+  .nav-links {
+    position: fixed; inset: 0; background: var(--cream); z-index: 90;
+    flex-direction: column; justify-content: center; gap: 16px;
+    transform: translateX(100%); transition: transform 0.3s ease; font-size: 1.2rem;
+  }
+  .nav-links.open { transform: translateX(0); }
+  .nav-toggle { display: flex; }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hero { padding-top: 40px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+}
+</style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">ॐ</span>
+        <span class="brand-text">
+          <strong>Pipilika</strong>
+          <em>Pipli Appliqué</em>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#story">Our Story</a>
+        <a href="#shop">Shop</a>
+        <a href="#customize">Customize</a>
+        <a href="#track">Track Order</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="chatToggleHeader" aria-label="Chat with us" title="Chat with us">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <div class="hero-deco" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Handcrafted in Odisha · India</p>
+        <h1>Timeless Pipli<br />Appliqué Art,<br /><em>Reimagined.</em></h1>
+        <p class="hero-sub">Own a piece of tradition — radiant Chandua canopies, wall art and heirlooms, hand-stitched by master artisans of Pipili.</p>
+        <div class="hero-cta">
+          <a href="#shop" class="btn btn-primary">Shop the Collection</a>
+          <a href="#customize" class="btn btn-ghost">Design Your Own Chandua</a>
+        </div>
+        <ul class="hero-stats">
+          <li><strong>4.9</strong><span>★ Rated</span></li>
+          <li><strong>12k+</strong><span>Happy homes</span></li>
+          <li><strong>120+</strong><span>Artisan families</span></li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-canvas">
+          <div class="motif m-sun"></div>
+          <div class="motif m-flower"></div>
+          <div class="motif m-bird"></div>
+          <div class="motif m-leaf"></div>
+          <div class="motif m-tassel t1"></div>
+          <div class="motif m-tassel t2"></div>
+          <div class="motif m-tassel t3"></div>
+        </div>
+        <p class="hero-caption">Chandua — ceremonial appliqué canopy</p>
+      </div>
+    </div>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>✂ Hand-Stitched</span><span>✦ 100% Cotton</span><span>☀ Natural Dyes</span><span>♻ Fair-Trade</span><span>✂ Hand-Stitched</span><span>✦ 100% Cotton</span><span>☀ Natural Dyes</span><span>♻ Fair-Trade</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Story ===== -->
+  <section class="story section" id="story">
+    <div class="container story-grid">
+      <div class="story-art" aria-hidden="true">
+        <div class="story-frame">
+          <div class="motif m-sun"></div>
+          <div class="motif m-flower"></div>
+          <p>Since 1950s<br />Pipili, Odisha</p>
+        </div>
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">The Craft</p>
+        <h2>Every stitch tells a story</h2>
+        <p>Pipli appliqué is a 900-year-old craft from the temple town of Pipili in Odisha. Artisans cut vivid cloth shapes — suns, lotuses, parrots and peacocks — and sew them onto vibrant backgrounds to create <strong>Chandua</strong>, the ceremonial canopy that adorns the chariots of Lord Jagannath.</p>
+        <p>We partner directly with 120+ artisan families, ensuring every piece is <strong>authentic, fair-traded, and made to order</strong>.</p>
+        <div class="story-points">
+          <div><span>🤲</span><div><strong>Made to Order</strong><p>Crafted only after you order — no stockpiles, no waste.</p></div></div>
+          <div><span>🎨</span><div><strong>Natural Dyes</strong><p>Earthy, skin-safe colours from flowers, bark and minerals.</p></div></div>
+          <div><span>⚖️</span><div><strong>Fair-Trade</strong><p>Artisans earn 2× the fair-trade standard wage.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Shop / Gallery ===== -->
+  <section class="shop section" id="shop">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">The Collection</p>
+          <h2>Shop handcrafted Pipli</h2>
+        </div>
+        <div class="filters" id="filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="chandua">Chandua</button>
+          <button class="chip" data-filter="wall">Wall Art</button>
+          <button class="chip" data-filter="home">Home Decor</button>
+          <button class="chip" data-filter="fashion">Bags & Fashion</button>
+        </div>
+      </div>
+
+      <div class="grid" id="productGrid"><!-- injected by gallery.js --></div>
+
+      <div class="shop-note">
+        <p>✨ Every item is handmade, so small variations are the mark of authenticity. <a href="#customize">Create a fully bespoke piece →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Customizer ===== -->
+  <section class="customize section" id="customize">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Made Just For You</p>
+        <h2>Design your own Chandua</h2>
+        <p class="lead">Pick a size, a colour story and a motif — our artisans will hand-stitch your one-of-a-kind canopy.</p>
+      </div>
+
+      <div class="customizer">
+        <div class="customizer-preview" id="czPreview" aria-hidden="true">
+          <div class="cz-art">
+            <div class="cz-motif cz-sun"></div>
+            <div class="cz-motif cz-flower"></div>
+            <div class="cz-motif cz-leaf"></div>
+            <div class="cz-motif cz-bird"></div>
+            <div class="cz-motif cz-tassel ct1"></div>
+            <div class="cz-motif cz-tassel ct2"></div>
+            <div class="cz-motif cz-tassel ct3"></div>
+          </div>
+        </div>
+
+        <div class="customizer-form">
+          <div class="form-group">
+            <label>Size</label>
+            <div class="option-row" id="czSize">
+              <button class="opt" data-value="small">Small<br /><small>18″ × 18″</small></button>
+              <button class="opt active" data-value="medium">Medium<br /><small>36″ × 36″</small></button>
+              <button class="opt" data-value="large">Large<br /><small>54″ × 54″</small></button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Colour story</label>
+            <div class="swatches" id="czColor">
+              <button class="swatch active" data-value="sunset" style="--c1:#f5471f;--c2:#f9c74f" title="Sunset"><span></span>Sunset</button>
+              <button class="swatch" data-value="ocean" style="--c1:#0b7285;--c2:#ffd43b" title="Ocean & Gold"><span></span>Ocean</button>
+              <button class="swatch" data-value="royal" style="--c1:#862e9c;--c2:#faa2c1" title="Royal"><span></span>Royal</button>
+              <button class="swatch" data-value="forest" style="--c1:#2b8a3e;--c2:#f9c74f" title="Forest"><span></span>Forest</button>
+              <button class="swatch" data-value="ruby" style="--c1:#c2255c;--c2:#ffe066" title="Ruby"><span></span>Ruby</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Motif</label>
+            <div class="option-row" id="czMotif">
+              <button class="opt active" data-value="sun">☀ Sun of Jagannath</button>
+              <button class="opt" data-value="lotus">🪷 Lotus</button>
+              <button class="opt" data-value="peacock">🦚 Peacock</button>
+              <button class="opt" data-value="parrot">🐦 Parrot</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Add a message on your Chandua</label>
+            <input type="text" id="czMessage" maxlength="60" placeholder="e.g. Wedding of A & B · 2026" />
+          </div>
+
+          <div class="cz-price" id="czPrice">₹ 0</div>
+          <button class="btn btn-primary btn-block" id="czAdd">Add Custom Chandua to Cart</button>
+          <p class="cz-note">Leads 4–6 weeks · Hand-stitched to order · Ships worldwide ✈</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Word of Mouth</p>
+        <h2>Loved across the world</h2>
+      </div>
+      <div class="t-grid" id="testimonialGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="contact section" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Get in Touch</p>
+        <h2>Let’s make something beautiful</h2>
+        <p>Questions about a design, a bulk order, or corporate gifting? We reply within 24 hours.</p>
+        <ul class="contact-list">
+          <li>✉ <a href="mailto:hello@pipilika.in">hello@pipilika.in</a></li>
+          <li>📞 +91 98765 43210</li>
+          <li>📍 Pipili, Puri District, Odisha, India</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Email address" required />
+        <textarea rows="4" placeholder="Tell us about your dream piece..." required></textarea>
+        <button class="btn btn-primary" type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#top" class="brand brand-footer">
+          <span class="brand-mark" aria-hidden="true">ॐ</span>
+          <span class="brand-text"><strong>Pipilika</strong><em>Pipli Appliqué</em></span>
+        </a>
+        <p>Reviving a 900-year-old craft, one radiant stitch at a time.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="#shop" data-filter="chandua">Chandua</a>
+        <a href="#shop" data-filter="wall">Wall Art</a>
+        <a href="#shop" data-filter="home">Home Decor</a>
+        <a href="#shop" data-filter="fashion">Bags & Fashion</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#story">Our Story</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#track">Track Order</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p>Stories & new arrivals, monthly.</p>
+        <form class="news-form" id="newsForm">
+          <input type="email" placeholder="you@email.com" required />
+          <button class="btn btn-primary btn-small" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Pipilika Handicrafts. Made with 🤲 in Odisha.</p>
+    </div>
+  </footer>
+
+  <!-- ===== Cart Drawer ===== -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-head">
+      <h3>Your Cart</h3>
+      <button class="icon-btn" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <p class="cart-empty">Your cart is empty.<br />Let’s find you a treasure ✨</p>
+    </div>
+    <div class="cart-foot" id="cartFoot">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">₹ 0</strong></div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn">Checkout</button>
+      <p class="mini-note">Handmade with love · Worldwide shipping</p>
+    </div>
+  </aside>
+
+  <!-- ===== Checkout Modal ===== -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Almost there ✨</h3>
+        <button class="icon-btn" id="checkoutClose" aria-label="Close checkout">✕</button>
+      </div>
+      <div class="modal-body">
+        <label>Full name<input type="text" id="coName" placeholder="Asha Mishra" required /></label>
+        <label>Email<input type="email" id="coEmail" placeholder="asha@email.com" required /></label>
+        <label>Shipping address<textarea id="coAddr" rows="3" placeholder="House, street, city, PIN" required></textarea></label>
+        <label>Payment method</label>
+        <div class="pay-options" id="payOptions">
+          <button class="opt active" data-value="upi">UPI</button>
+          <button class="opt" data-value="cod">Cash on Delivery</button>
+          <button class="opt" data-value="card">Card</button>
+        </div>
+        <p class="modal-summary" id="modalSummary"></p>
+      </div>
+      <div class="modal-foot">
+        <button class="btn btn-primary btn-block" id="placeOrder">Place Order</button>
+        <p class="mini-note">This is a demo checkout — no payment is actually taken.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Success Modal ===== -->
+  <div class="modal" id="successModal" aria-hidden="true">
+    <div class="modal-card center">
+      <div class="success-emoji">🎉</div>
+      <h3>Order placed!</h3>
+      <p id="successText">Thank you! Your handcrafted treasure is on its way to the studio.</p>
+      <div class="order-id"><span>Order ID</span><strong id="orderId">—</strong></div>
+      <div id="trackArea"><!-- ordering + delivery timeline + map injected here --></div>
+      <div class="track-actions">
+        <a class="btn btn-primary" id="waBtn" href="#" target="_blank" rel="noopener">Send on WhatsApp <small style="font-weight:400">&#128241;</small></a>
+        <a class="btn btn-ghost" id="emailBtn" href="#">Email receipt</a>
+      </div>
+      <button class="btn btn-ghost" id="successClose">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- ===== Track Order Section ===== -->
+  <section class="track section" id="track">
+    <div class="container">
+      <div class="section-head center">
+        <p class="eyebrow">Follow Your Treasure</p>
+        <h2>Track your delivery</h2>
+        <p class="lead">Enter your Order ID to see the live route from Pipili to your doorstep — and how many days remain.</p>
+      </div>
+      <form class="track-form" id="trackForm">
+        <input id="trackId" type="text" placeholder="e.g. PL-4F2K9Q" required />
+        <button class="btn btn-primary" type="submit">Track</button>
+      </form>
+      <div class="track-result" id="trackResult"><!-- injected --></div>
+    </div>
+  </section>
+
+  <!-- ===== Chat ===== -->
+  <button class="chat-fab" id="chatFab" aria-label="Chat with assistant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </button>
+  <div class="chat-window" id="chatWindow" aria-hidden="true">
+    <div class="chat-head">
+      <div class="chat-avatar">A</div>
+      <div>
+        <strong>Aruna · Craft Assistant</strong>
+        <span class="chat-status"><i></i> Online · replies instantly</span>
+      </div>
+      <button class="icon-btn" id="chatClose" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="msg bot">Namaste 🙏 I’m Aruna, your Pipli craft assistant. Ask me about products, prices, shipping, or customization!</div>
+    </div>
+    <div class="chat-suggest" id="chatSuggest">
+      <button class="sug">💡 What's a Chandua?</button>
+      <button class="sug">📦 Track my order</button>
+      <button class="sug">🚚 Shipping time?</button>
+      <button class="sug">🎨 Can I customize?</button>
+    </div>
+    <form class="chat-input" id="chatForm">
+      <input id="chatText" type="text" placeholder="Type your question…" autocomplete="off" />
+      <button type="submit" aria-label="Send">➤</button>
+    </form>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* Pipilika — product & site data */
+window.PIPILIKA = {
+  products: [
+    {
+      id: "c1",
+      name: "Classic Jagannath Chandua",
+      cat: "chandua",
+      catLabel: "Chandua",
+      price: 1899,
+      was: 2499,
+      tag: "Best Seller",
+      badge: "Made to Order",
+      desc: "Ceremonial canopy with the sacred Sun of Jagannath, hand-tacked with lotus borders.",
+      bg1: "#f5471f",
+      bg2: "#f9c74f"
+    },
+    {
+      id: "c2",
+      name: "Royal Bride Chandua",
+      cat: "chandua",
+      catLabel: "Chandua",
+      price: 3299,
+      was: 3999,
+      tag: "Ceremonial",
+      badge: "New",
+      desc: "Rich ruby and gold canopy woven for weddings and housewarmings.",
+      bg1: "#c2255c",
+      bg2: "#ffe066"
+    },
+    {
+      id: "w1",
+      name: "Sunburst Wall Mandala",
+      cat: "wall",
+      catLabel: "Wall Art",
+      price: 1249,
+      was: 1499,
+      tag: "Gift Favorite",
+      desc: "A burst of saffron sunrays to brighten any corner of your home.",
+      bg1: "#0b7285",
+      bg2: "#ffd43b"
+    },
+    {
+      id: "w2",
+      name: "Lord Jagannath Trio Wall Hanging",
+      cat: "wall",
+      catLabel: "Wall Art",
+      price: 1599,
+      tag: "Devotional",
+      desc: "The divine trio of Jagannath, Balabhadra and Subhadra in appliqué.",
+      bg1: "#862e9c",
+      bg2: "#faa2c1"
+    },
+    {
+      id: "h1",
+      name: "Peacock Lampshade",
+      cat: "home",
+      catLabel: "Home Decor",
+      price: 899,
+      was: 1099,
+      tag: "Coziness",
+      desc: "Soft glow through layered teal and gold feathers — pure magic at dusk.",
+      bg1: "#2b8a3e",
+      bg2: "#f9c74f"
+    },
+    {
+      id: "h2",
+      name: "Set of 6 Table Mats",
+      cat: "home",
+      catLabel: "Home Decor",
+      price: 1499,
+      tag: "Everyday Art",
+      desc: "Washable cotton mats that bring festival colour to your dining table.",
+      bg1: "#f03e3e",
+      bg2: "#ffa94d"
+    },
+    {
+      id: "f1",
+      name: "Tote Bag — Pipili Bloom",
+      cat: "fashion",
+      catLabel: "Bags & Fashion",
+      price: 799,
+      was: 999,
+      badge: "Trending",
+      tag: "Carry Craft",
+      desc: "Sturdy handmade tote with appliqué flowers, made for everyday carrying.",
+      bg1: "#7048e8",
+      bg2: "#f8c3cd"
+    },
+    {
+      id: "f2",
+      name: "Pouch & Clutch Duo",
+      cat: "fashion",
+      catLabel: "Bags & Fashion",
+      price: 699,
+      tag: "Gift Ready",
+      desc: "Two functional pouches with sun and bird motifs — a lovely gift set.",
+      bg1: "#e8590c",
+      bg2: "#ffe066"
+    },
+    {
+      id: "c3",
+      name: "Mini Chandua Toran",
+      cat: "chandua",
+      catLabel: "Chandua",
+      price: 749,
+      tag: "Festive",
+      desc: "Doorway toran canopy, the quick nod to tradition for every celebration.",
+      bg1: "#f76707",
+      bg2: "#c2255c"
+    },
+    {
+      id: "h3",
+      name: "Appliqué Cushion Covers (Pair)",
+      cat: "home",
+      catLabel: "Home Decor",
+      price: 1299,
+      was: 1599,
+      tag: "Cozy Corner",
+      desc: "Double-suffering artful cushions, zipped and fully washable.",
+      bg1: "#1098ad",
+      bg2: "#f9c74f"
+    },
+    {
+      id: "w3",
+      name: "Raghurajpur Birds Panel",
+      cat: "wall",
+      catLabel: "Wall Art",
+      price: 1099,
+      tag: "Heritage",
+      desc: "Winged appliqué inspired by Raghurajpur's pattachitra parrots.",
+      bg1: "#3b5bdb",
+      bg2: "#69db7c"
+    },
+    {
+      id: "f3",
+      name: "Temple Umbrella",
+      cat: "fashion",
+      catLabel: "Bags & Fashion",
+      price: 2199,
+      was: 2699,
+      tag: "Statement",
+      badge: "Handmade",
+      desc: "A full-size ceremonial umbrella to shade and to stun.",
+      bg1: "#c2255c",
+      bg2: "#ffd43b"
+    },
+    {
+      id: "c4",
+      name: "Chandua Wedding Set (5 pcs)",
+      cat: "chandua",
+      catLabel: "Chandua",
+      price: 8999,
+      was: 10999,
+      tag: "Marriage Special",
+      badge: "Artisan Pick",
+      desc: "A complete ceremonial set: one large Chandi +four matching torans.",
+      bg1: "#f5471f",
+      bg2: "#f9c74f"
+    }
+  ],
+
+  testimonials: [
+    {
+      name: "Asha Mehta",
+      place: "Mumbai, India",
+      stars: 5,
+      color: "#c2255c",
+      text: "The bride Chandua for my daughter's wedding took our puja hall to another level. Truly heirloom-quality stitching."
+    },
+    {
+      name: "Daniel & Freya",
+      place: "London, UK",
+      stars: 5,
+      color: "#0b7285",
+      text: "Ordered from abroad and the team sent progress photos of our custom canopy. It arrived perfectly, safely wrapped."
+    },
+    {
+      name: "Priya Nair",
+      place: "Bangalore, India",
+      stars: 4,
+      color: "#2b8a3e",
+      text: "The wall mandala is stunning and the packaging doubled as a gift. Clearly a family business that cares."
+    },
+    {
+      name: "Rohan Iyer",
+      place: "Surat, India",
+      stars: 5,
+      color: "#862e9c",
+      text: "Bought 12 tote bags for corporate gifting — each one unique. Our team still talks about them!"
+    }
+  ],
+
+  customSizes: {
+    small:  { label: "Small · 18″×18″", price: 1299 },
+    medium: { label: "Medium · 36″×36″", price: 2299 },
+    large:  { label: "Large · 54″×54″", price: 3699 }
+  },
+
+  customColors: {
+    sunset: { c1: "#f5471f", c2: "#f9c74f", label: "Sunset" },
+    ocean:  { c1: "#0b7285", c2: "#ffd43b", label: "Ocean" },
+    royal:  { c1: "#862e9c", c2: "#faa2c1", label: "Royal" },
+    forest: { c1: "#2b8a3e", c2: "#f9c74f", label: "Forest" },
+    ruby:   { c1: "#c2255c", c2: "#ffe066", label: "Ruby" }
+  },
+
+  customMotifs: {
+    sun:     { label: "Sun of Jagannath", icon: "☀" },
+    lotus:   { label: "Lotus", icon: "🪷" },
+    peacock: { label: "Peacock", icon: "🦚" },
+    parrot:  { label: "Parrot", icon: "🐦" }
+  },
+
+  fmt: function (n) { return "₹" + n.toLocaleString("en-IN"); }
+};
+</script>
+<script>
+/* Pipilika — cart state, rendering, checkout */
+(function () {
+  const P = window.PIPILIKA;
+  let cart = load();
+
+  function load() {
+    try { return JSON.parse(localStorage.getItem("pipilika_cart")) || []; }
+    catch (e) { return []; }
+  }
+  function save() { localStorage.setItem("pipilika_cart", JSON.stringify(cart)); }
+
+  const els = {
+    btn: document.getElementById("cartBtn"),
+    drawer: document.getElementById("cartDrawer"),
+    overlay: document.getElementById("overlay"),
+    close: document.getElementById("cartClose"),
+    count: document.getElementById("cartCount"),
+    body: document.getElementById("cartBody"),
+    foot: document.getElementById("cartFoot"),
+    total: document.getElementById("cartTotal"),
+    checkoutBtn: document.getElementById("checkoutBtn"),
+    modal: document.getElementById("checkoutModal"),
+    modalClose: document.getElementById("checkoutClose"),
+    modalSummary: document.getElementById("modalSummary"),
+    successModal: document.getElementById("successModal"),
+    successText: document.getElementById("successText"),
+    successClose: document.getElementById("successClose"),
+    placeOrder: document.getElementById("placeOrder"),
+    payOptions: document.getElementById("payOptions"),
+    payBtns: document.querySelectorAll("#payOptions .opt"),
+    toast: document.getElementById("toast")
+  };
+
+  /* ---------- helpers ---------- */
+  function cartCount() { return cart.reduce((s, it) => s + it.qty, 0); }
+  function cartTotal() { return cart.reduce((s, it) => s + it.qty * it.price, 0); }
+
+  function thumbCss(item) {
+    if (item.custom) {
+      const c = P.customColors[item.color] || P.customColors.sunset;
+      return { "--bg1": c.c1, "--bg2": c.c2 };
+    }
+    const p = P.products.find(x => x.id === item.id);
+    return { "--bg1": (p && p.bg1) || "#f5471f", "--bg2": (p && p.bg2) || "#f9c74f" };
+  }
+
+  function thumbInner(item) {
+    if (item.custom) {
+      const m = P.customMotifs[item.motif] || P.customMotifs.sun;
+      return '<span class="mini-sun" style="font-size:34px;background:none;box-shadow:none;color:#fff;display:grid;place-items:center">' + m.icon + "</span>";
+    }
+    return '<span class="mini-sun"></span>';
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    els.count.textContent = cartCount();
+    els.total.textContent = P.fmt(cartTotal());
+
+    if (!cart.length) {
+      els.body.innerHTML = '<p class="cart-empty">Your cart is empty.<br />Let’s find you a treasure ✨</p>';
+      els.foot.style.display = "none";
+      return;
+    }
+    els.foot.style.display = "block";
+    els.body.innerHTML = cart.map(function (item, i) {
+      const extra = item.custom
+        ? (P.customColors[item.color] ? P.customColors[item.color].label : "") +
+          " · " + (P.customMotifs[item.motif] ? P.customMotifs[item.motif].label : "") +
+          (item.size ? " · " + item.size : "")
+        : "";
+      const st = thumbCss(item);
+      const stStr = Object.keys(st).map(k => k + ":" + st[k]).join(";");
+      return '<div class="cart-item">' +
+        '<div class="thumb" style="' + stStr + '">' + thumbInner(item) + "</div>" +
+        '<div><div class="name">' + (item.custom ? "Custom " : "") + item.name + "</div>" +
+        '<div class="sub">' + extra + "</div>" +
+        '<div class="qty"><button data-act="dec" data-i="' + i + '">−</button>' +
+        '<span>' + item.qty + "</span>" +
+        '<button data-act="inc" data-i="' + i + '">+</button></div>' +
+        '<button class="item-remove" data-act="remove" data-i="' + i + '">Remove</button></div>' +
+        '<div class="price">' + P.fmt(item.price) + "</div></div>";
+    }).join("");
+  }
+
+  /* ---------- actions ---------- */
+  function add(item) { cart.push(item); save(); render(); toast("Added to cart ✨"); }
+  function update(i, delta) {
+    cart[i].qty += delta;
+    if (cart[i].qty <= 0) cart.splice(i, 1);
+    save(); render();
+  }
+  function remove(i) { cart.splice(i, 1); save(); render(); toast("Removed from cart"); }
+
+  /* ---------- ui ---------- */
+  function openDrawer() { els.drawer.classList.add("open"); els.overlay.classList.add("show"); }
+  function closeDrawer() { els.drawer.classList.remove("open"); els.overlay.classList.remove("show"); }
+  function openModal() { els.modal.classList.add("show"); }
+  function closeModal() { els.modal.classList.remove("show"); }
+  function openSuccess() { els.successModal.classList.add("show"); }
+
+  function toast(msg) {
+    els.toast.textContent = msg;
+    els.toast.classList.add("show");
+    clearTimeout(toast._t);
+    toast._t = setTimeout(function () { els.toast.classList.remove("show"); }, 2600);
+  }
+
+  /* ---------- events ---------- */
+  els.btn.addEventListener("click", function () { render(); openDrawer(); });
+  els.close.addEventListener("click", closeDrawer);
+  els.overlay.addEventListener("click", function () { closeDrawer(); closeModal(); });
+
+  els.body.addEventListener("click", function (e) {
+    const t = e.target;
+    if (!t.dataset.act) return;
+    const i = +t.dataset.i;
+    if (t.dataset.act === "inc") update(i, 1);
+    if (t.dataset.act === "dec") update(i, -1);
+    if (t.dataset.act === "remove") remove(i);
+  });
+
+  els.checkoutBtn.addEventListener("click", function () {
+    if (!cart.length) return;
+    els.modalSummary.textContent = cartCount() + " item(s) · Total " + P.fmt(cartTotal()) +
+      " · incl. free shipping";
+    openModal();
+  });
+  els.modalClose.addEventListener("click", closeModal);
+
+  els.payOptions.addEventListener("click", function (e) {
+    const b = e.target.closest(".opt"); if (!b) return;
+    els.payBtns.forEach(x => x.classList.remove("active"));
+    b.classList.add("active");
+  });
+
+  /* ---------- orders & delivery tracking ---------- */
+  const WORKSHOP = "Pipili, Puri, Odisha, India";
+
+  /* ⚙️ EDIT THIS BLOCK — EmailJS setup (free, no backend, sends REAL emails).
+     1) Create a free account at https://www.emailjs.com  (200 emails/month free).
+     2) Add an email service (e.g. your Gmail/Outlook) -> give you a SERVICE ID.
+     3) Create TWO Email Templates in the Dashboard:
+        - "Buyer confirmation"  -> to_email = {{to_email}}  (the SUCCESSFUL MAIL to buyer)
+        - "Company new order"   -> to_email = <your inbox>    (the CONGRATULATIONS note)
+        (Map the fields: {{to_name}} {{order_id}} {{order_total}} {{delivery_days}} {{eta_date}} {{address}} etc.)
+     4) Paste the three IDs below. Leave blank to turn emailing OFF (fallback: mailto/WhatsApp buttons).
+     NOTE: if these are left blank, the site logs a friendly hint instead of sending.  */
+  const EMAILJS_PUBLIC_KEY = "";      // e.g. "A1b2C3d4E5f6G7"
+  const EMAILJS_SERVICE_ID = "";      // e.g. "service_abcd123"
+  const EMAILJS_BUYER_TEMPLATE = "";  // template id that emails the BUYER (success mail)
+  const EMAILJS_ORDER_TEMPLATE = "";  // template id that emails the COMPANY (congrats)
+  const COMPANY_EMAIL = "hello@pipilika.in";   // company notification inbox
+  const COMPANY_PHONE = "919876543210";        // WhatsApp number, digits only
+  /* Backend (real emails via your own SMTP). When the Node server is running,
+     orders POST here and Nodemailer sends the emails. Set this to your deployed
+     URL (e.g. "https://pipilika.example.com") once hosting. Leave "" to disable
+     the backend and rely on the EmailJS fallback instead.
+     Run the backend:  cd server && npm install && npm run start */
+  const BACKEND_URL = "http://localhost:3000";
+
+  function loadOrders() { try { return JSON.parse(localStorage.getItem("pipilika_orders")) || []; } catch (e) { return []; } }
+  function saveOrders(list) { localStorage.setItem("pipilika_orders", JSON.stringify(list)); }
+
+  function orderId() {
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+    let s = "";
+    for (let i = 0; i < 6; i++) s += chars[Math.floor(Math.random() * chars.length)];
+    return "PL-" + s;
+  }
+
+  const STATE_RE = /andhra|arunachal|assam|bihar|chhati|delhi|goa|gujarat|haryana|himachal|jammu|kashmir|jharkhand|karnataka|kerala|madhya|maharashtra|manipur|meghalaya|mizoram|nagaland|odisha|orissa|punjab|rajasthan|sikkim|tamilnadu|tamilnadu|telangana|tripura|uttar|uttarakhand|west bengal/i;
+  const COUNTRY_RE = /\b(india|usa|u\.?s\.?a\.?|united states|uk|u\.?k\.?|united kingdom|australia|canada|france|germany|italy|spain|portugal|netherlands|switzerland|dubai|uae|singapore|new zealand|sri lanka|nepal|bhutan|bangladesh|japan|china|europe)\b/i;
+  const STREET_RE = /\b(street|road|rd|avenue|ave|lane|ln|block|colony|nagar|kar|cross|main|house|flat|apartment|apt|village|vila|gali)\b/i;
+
+  function extractCity(addr) {
+    const tokens = addr.split(",").map(t => t.replace(/[^A-Za-z ]/g, "").trim()).filter(Boolean);
+    let city = "India";
+    for (let i = tokens.length - 1; i >= 0; i--) {
+      const t = tokens[i];
+      if (!t) continue;
+      if (COUNTRY_RE.test(t)) continue;              /* skip country */
+      if (STATE_RE.test(t) && t.length <= 24) continue; /* skip state names */
+      if (/^[a-z]{2}$/i.test(t)) continue;           /* skip 2-letter abbrs like NY */
+      if (STREET_RE.test(t)) continue;               /* skip street/house tokens */
+      city = t;
+      break;
+    }
+    return city;
+  }
+
+  function extractCountry(addr) {
+    const m = addr.match(/\b(india|usa|u\.?s\.?a\.?|united states|uk|u\.?k\.?|united kingdom|australia|canada|france|germany|italy|spain|portugal|netherlands|switzerland|dubai|uae|singapore|new zealand|sri lanka|nepal|bhutan|bangladesh|japan|china)\b/i);
+    if (!m) return "India";
+    const key = m[0].toLowerCase().replace(/\./g, "");
+    const map = {
+      india: "India", usa: "USA", "usa": "USA", u: "UK", "uk": "UK",
+      "united states": "USA", "united kingdom": "UK", uae: "UAE"
+    };
+    return map[key] || (m[0][0].toUpperCase() + m[0].slice(1));
+  }
+
+  function deliveryDays(addr) {
+    /* 6-digit PIN => India (3–5 days), otherwise international (7–14 days) */
+    const india = /\b\d{6}\b/.test(addr) && !/\b(USA|U\.S\.A\.?|UK|London|Australia|Canada|Europe|Dubai|Singapore|UAE|Russia)\b/i.test(addr);
+    return india ? 4 : 11;
+  }
+
+  function addDays(date, n) { const d = new Date(date); d.setDate(d.getDate() + n); return d; }
+  function fmtDate(d) {
+    return d.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" }) + " · " +
+      d.toLocaleDateString("en-IN", { year: "numeric" });
+  }
+
+  function pipeline(days) {
+    const today = new Date();
+    const craft = addDays(today, 2);
+    const ship = addDays(today, Math.min(3, days - 2));
+    const eta = addDays(today, days);
+    return [
+      { label: "Order placed", desc: "Artisans pick your fabric", date: today, done: true },
+      { label: "Crafting", desc: "Hand-stitching your piece", date: craft, done: false },
+      { label: "Shipped", desc: "Leaves Pipili workshop", date: ship, done: false },
+      { label: "Delivered", desc: "At your doorstep 🏠", date: eta, done: false, eta: true }
+    ];
+  }
+
+  function stepsHTML(steps) {
+    return '<div class="t-steps">' + steps.map(function (s, i) {
+      return '<div class="t-step' + (s.done ? " done" : "") + (s.eta ? " eta" : "") + '">' +
+        '<span class="t-dot">' + (s.done ? "✓" : (s.eta ? "🎁" : "")) + "</span>" +
+        "<div><strong>" + s.label + "</strong><small>" + s.desc + "</small></div>" +
+        '<em>' + fmtDate(s.date) + "</em></div>";
+    }).join("") + "</div>";
+  }
+
+  function mapEmbed(city, country) {
+    const src = "https://maps.google.com/maps?saddr=" + encodeURIComponent(WORKSHOP) +
+      "&daddr=" + encodeURIComponent((country === "India" ? city : city + ", " + country)) +
+      "&output=embed&z=6";
+    return '<div class="t-map">' +
+      '<h4>📌 Route from the workshop</h4>' +
+      '<iframe src="' + src + '" loading="lazy" title="Delivery route map" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+      '<p class="t-map-note">Live route: Pipili, Odisha → <strong>' + city + ", " + country + "</strong></p>" +
+      '<a class="btn btn-ghost btn-small" href="https://www.google.com/maps/dir/' +
+      encodeURIComponent(WORKSHOP) + "/" + encodeURIComponent(city + ", " + country) +
+      '" target="_blank" rel="noopener">Open route in Google Maps →</a></div>';
+  }
+
+  function trackingHTML(order) {
+    const steps = pipeline(order.days);
+    return "<h4>🚚 Delivery in <span class='days-left'>" + order.days +
+      " days</span> · arrives by <span class='eta-date'>" + fmtDate(addDays(new Date(order.date), order.days)) + "</span></h4>" +
+      stepsHTML(steps) + mapEmbed(order.city, order.country);
+  }
+
+  function buildOrder(name, email, addr, total) {
+    return {
+      id: orderId(),
+      name: name, email: email, addr: addr,
+      city: extractCity(addr),
+      country: extractCountry(addr),
+      days: deliveryDays(addr),
+      date: new Date().toISOString(),
+      total: total,
+      items: cart.map(function (it) { return { name: it.name, qty: it.qty, price: it.price }; })
+    };
+  }
+
+  function waLink(order) {
+    const msg = "Namaste Pipilika 🙏 I just placed an order." +
+      "\n• Order ID: " + order.id +
+      "\n• Amount: " + P.fmt(order.total) +
+      "\n• Delivery to: " + order.city + ", " + order.country +
+      "\n• ETA: " + fmtDate(addDays(new Date(order.date), order.days));
+    return "https://wa.me/" + COMPANY_PHONE + "?text=" + encodeURIComponent(msg);
+  }
+  function emailLink(order) {
+    const subj = "Order receipt " + order.id + " — Pipilika Handicrafts";
+    const body = "Hi, this is " + order.name + ". Please confirm my order.\n" +
+      "Order ID: " + order.id +
+      "\nTotal: " + P.fmt(order.total) +
+      "\nDeliver to: " + order.addr +
+      "\nArriving by: " + fmtDate(addDays(new Date(order.date), order.days));
+    return "mailto:" + COMPANY_EMAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(body);
+  }
+
+  function renderOrder(order, holder) {
+    holder.innerHTML = trackingHTML(order);
+    return order;
+  }
+
+  /* Sends REAL emails on every order:
+      1) "Successful order" mail  -> to the BUYER's registered email.
+      2) "Congratulations" mail    -> to the COMPANY inbox.
+     Preferred: POST to the Node backend (your own SMTP via Nodemailer).
+     Fallback : EmailJS (client-side, free). Skipped gracefully if nothing is configured. */
+  function emailReady() {
+    return EMAILJS_PUBLIC_KEY && EMAILJS_SERVICE_ID && EMAILJS_BUYER_TEMPLATE && EMAILJS_ORDER_TEMPLATE &&
+      (window.emailjs && window.emailjs.send);
+  }
+
+  function notifyServer(order) {
+    return fetch(BACKEND_URL + "/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(order)
+    }).then(function (r) {
+      return r.json().catch(function () { return { ok: false }; });
+    });
+  }
+
+  function notifyEmailJS(order) {
+    if (!emailReady()) {
+      console.warn("[Pipilika] No email backend configured (BACKEND_URL empty and EmailJS IDs blank). " +
+        "Use the Email receipt / WhatsApp buttons.");
+      return Promise.resolve("none");
+    }
+    const p = orderParams(order);
+    window.emailjs.init(EMAILJS_PUBLIC_KEY);
+    return window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_BUYER_TEMPLATE, p)
+      .then(function () {
+        console.log("[Pipilika] Successful order email sent to " + order.email);
+        if (EMAILJS_ORDER_TEMPLATE !== EMAILJS_BUYER_TEMPLATE) {
+          window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_ORDER_TEMPLATE, p)
+            .then(function () { console.log("[Pipilika] Company order notification sent to " + COMPANY_EMAIL); })
+            .catch(function (e) { console.warn("[Pipilika] Company email failed:", e && e.text || e); });
+        }
+        return "emailjs";
+      })
+      .catch(function (e) { console.warn("[Pipilika] Buyer email failed:", e && e.text || e); return "none"; });
+  }
+
+  /* Resolves to a mode string:
+       "server"      — backend POSTed and Nodemailer sent the emails
+       "backend-off" — backend reachable but SMTP not configured (browser emails disabled)
+       "emailjs"     — fell back to EmailJS (client-side)
+       "none"        — nothing could be sent */
+  function notifyCompany(order) {
+    if (!BACKEND_URL) return notifyEmailJS(order);
+    return notifyServer(order).then(function (res) {
+      if (res && res.ok) {
+        if (res.emails && res.emails.length) {
+          console.log("[Pipilika] Emails sent via server for " + order.id);
+          return "server";
+        }
+        console.warn("[Pipilika] Backend reachable but SMTP not configured:", res.warning || "no warning");
+        return "backend-off";
+      }
+      console.warn("[Pipilika] Backend rejected order:", res && res.error || res);
+      return "none";
+    }).catch(function (e) {
+      console.warn("[Pipilika] Backend unreachable — falling back to EmailJS.", e && e.message || e);
+      return notifyEmailJS(order);
+    });
+  }
+
+  function orderParams(order) {
+    const eta = fmtDate(addDays(new Date(order.date), order.days));
+    return {
+      to_email: order.email,
+      to_name: order.name.split(" ")[0],
+      reply_to: order.email,
+      order_id: order.id,
+      order_total: P.fmt(order.total),
+      order_date: fmtDate(new Date(order.date)),
+      delivery_days: String(order.days),
+      eta_date: eta,
+      city: order.city,
+      country: order.country,
+      address: order.addr,
+      customer: order.name,
+      to_company: COMPANY_EMAIL
+    };
+  }
+
+  els.placeOrder.addEventListener("click", function () {
+    const name = document.getElementById("coName").value.trim();
+    const email = document.getElementById("coEmail").value.trim();
+    const addr = document.getElementById("coAddr").value.trim();
+    if (!name || !email || !addr) { toast("Please fill all details"); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { toast("Please enter a valid email"); return; }
+
+    const order = buildOrder(name, email, addr, cartTotal());
+    const orders = loadOrders();
+    orders.unshift(order);
+    saveOrders(orders);
+
+    notifyCompany(order).then(function (mode) {
+      const msg = (mode === "server" || mode === "emailjs")
+        ? "A confirmation email is on its way to " + email + ", and we've notified our team. Check your inbox (and spam folder)!"
+        : (mode === "backend-off"
+          ? "Your server is running but SMTP isn't set in server/.env yet, so no email was sent. Use Email receipt or WhatsApp below for an instant copy."
+          : "Order confirmation emails are not live yet — tap Email receipt or Send on WhatsApp below for an instant copy.");
+      els.successText.textContent = "Thank you, " + name.split(" ")[0] + "! 🎉 Your order " + order.id + ". " + msg;
+    });
+
+    const buyer = document.getElementById("emailBtn");
+    document.getElementById("orderId").textContent = order.id;
+    document.getElementById("waBtn").href = waLink(order);
+    buyer.href = emailLink(order);
+    renderOrder(order, document.getElementById("trackArea"));
+
+    cart = [];
+    save(); render();
+    closeModal(); openSuccess();
+  });
+
+  els.successClose.addEventListener("click", function () { els.successModal.classList.remove("show"); });
+
+  /* ---------- track-order form in the Track section ---------- */
+  document.getElementById("trackForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const wanted = document.getElementById("trackId").value.trim().toUpperCase();
+    const orders = loadOrders();
+    const found = orders.find(o => o.id.toUpperCase() === wanted) || orders[0];
+    const holder = document.getElementById("trackResult");
+    if (found) {
+      renderOrder(found, holder);
+      holder.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    } else {
+      holder.innerHTML = '<h4 class="lead" style="text-align:center;color:var(--ink-soft)">No order found yet — place an order first, or check your email for the Order ID.</h4>';
+    }
+  });
+
+  /* ---------- expose ---------- */
+  window.CartAPI = { add: add, render: render, count: cartCount, open: openDrawer };
+})();
+</script>
+<script>
+/* Pipilika — product gallery, filters & testimonials */
+(function () {
+  const P = window.PIPILIKA;
+  const grid = document.getElementById("productGrid");
+  const filterBtns = document.querySelectorAll("#filters .chip");
+  let activeFilter = "all";
+
+  function motifDecor(bg1, bg2) {
+    const seed = Math.abs(hash(bg1 + bg2)) % 3;
+    let inner = '<div class="mat"><div class="mini-sun"></div></div>';
+    if (seed === 1) inner = '<div class="mat"><div class="mini-sun"></div></div><span class="mini-flower"></span>';
+    else if (seed === 2) inner = '<div class="mat"><div class="mini-sun"></div></div><span class="mini-bird"></span><span class="mini-leaf"></span>';
+    return inner +
+      '<span class="p-tassel p1"></span><span class="p-tassel p2"></span><span class="p-tassel p3"></span>';
+  }
+  function hash(s) { let h = 0; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
+
+  function productCard(p) {
+    return '<article class="product-card reveal">' +
+      '<div class="product-art" style="--bg1:' + p.bg1 + ";--bg2:" + p.bg2 + '">' +
+      (p.badge ? '<span class="product-badge">' + p.badge + "</span>" : "") +
+      '<span class="product-tag">' + p.tag + "</span>" +
+      motifDecor(p.bg1, p.bg2) + "</div>" +
+      '<div class="product-info">' +
+      '<span class="product-cat">' + p.catLabel + "</span>" +
+      '<h3 class="product-name">' + p.name + "</h3>" +
+      '<p class="product-desc">' + p.desc + "</p>" +
+      '<div class="product-foot">' +
+      '<span class="product-price">' + (p.was ? '<span class="was">' + P.fmt(p.was) + "</span>" : "") + P.fmt(p.price) + "</span>" +
+      '<button class="add-btn" data-add="' + p.id + '">Add to Cart</button>' +
+      "</div></div></article>";
+  }
+
+  function render(filter) {
+    const list = filter === "all" ? P.products : P.products.filter(x => x.cat === filter);
+    grid.innerHTML = list.map(productCard).join("");
+    grid.innerHTML += list.length ? "" : '<p class="lead" style="grid-column:1/-1;text-align:center">No items in this category yet — check back soon!</p>';
+    requestAnimationFrame(() => grid.querySelectorAll(".product-card").forEach(el => el.classList.add("visible")));
+  }
+
+  grid.addEventListener("click", function (e) {
+    const b = e.target.closest("[data-add]"); if (!b) return;
+    const p = P.products.find(x => x.id === b.dataset.add);
+    if (p) window.CartAPI.add({ id: p.id, name: p.name, price: p.price, qty: 1 });
+  });
+
+  filterBtns.forEach(btn => btn.addEventListener("click", function () {
+    filterBtns.forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    activeFilter = btn.dataset.filter;
+    render(activeFilter);
+    document.getElementById("shop").scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
+
+  function applySortAndFilter(skipScroll) {
+    render(activeFilter);
+    if (!skipScroll) document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+  }
+
+  /* footer quick-shop links */
+  document.querySelectorAll(".footer-grid a[data-filter]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      filterBtns.forEach(x => x.classList.remove("active"));
+      const chip = document.querySelector('#filters .chip[data-filter="' + a.dataset.filter + '"]');
+      if (chip) chip.classList.add("active");
+      activeFilter = a.dataset.filter;
+      render(activeFilter);
+      document.getElementById("shop").scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  /* testimonials */
+  const tg = document.getElementById("testimonialGrid");
+  tg.innerHTML = P.testimonials.map(function (t) {
+    return '<article class="t-card reveal">' +
+      '<div class="t-stars">' + "★".repeat(t.stars) + "☆".repeat(5 - t.stars) + "</div>" +
+      "<blockquote>“" + t.text + "”</blockquote>" +
+      '<div class="t-who"><span class="t-avatar" style="background:' + t.color + '">' + t.name[0] + "</span>" +
+      "<div><strong>" + t.name + "</strong><span>" + t.place + "</span></div></div></article>";
+  }).join("");
+
+  /* image thumbs scheme per product for cart use via data lookup — no-op placeholder */
+  window.GalleryAPI = { applySortAndFilter: applySortAndFilter };
+
+  render("all");
+})();
+</script>
+<script>
+/* Pipilika — Chandua customizer */
+(function () {
+  const P = window.PIPILIKA;
+  const preview = document.getElementById("czPreview");
+  const czArt = preview.querySelector(".cz-art");
+  const priceEl = document.getElementById("czPrice");
+
+  const sizeEls = document.querySelectorAll("#czSize .opt");
+  const colorEls = document.querySelectorAll("#czColor .swatch");
+  const motifEls = document.querySelectorAll("#czMotif .opt");
+  const msgInput = document.getElementById("czMessage");
+  const addBtn = document.getElementById("czAdd");
+
+  const state = { size: "medium", color: "sunset", motif: "sun", message: "" };
+
+  function update() {
+    const size = P.customSizes[state.size];
+    const col = P.customColors[state.color];
+    const motif = P.customMotifs[state.motif];
+
+    priceEl.textContent = P.fmt(size.price) + " · " + state.size;
+
+    czArt.style.setProperty("--czc1", col.c1);
+    czArt.style.setProperty("--czc2", col.c2);
+
+    /* swap motif visuals */
+    const motifEl = czArt.querySelector(".cz-sun");
+    if (state.motif === "sun") {
+      motifEl.style.display = "block";
+    } else {
+      motifEl.style.display = "none";
+    }
+
+    /* represent chosen motif with an emoji badge */
+    let emoji = czArt.querySelector(".cz-emoji");
+    if (!emoji) {
+      emoji = document.createElement("span");
+      emoji.className = "cz-emoji";
+      emoji.style.cssText = "position:absolute;top:52%;left:16%;font-size:44px;filter:drop-shadow(0 4px 8px rgba(0,0,0,0.3))";
+      czArt.appendChild(emoji);
+    }
+    if (state.motif === "sun") emoji.style.display = "none";
+    else { emoji.style.display = "block"; emoji.textContent = motif.icon; }
+  }
+
+  function wire(btns, key, activeClass) {
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        btns.forEach(x => x.classList.remove(activeClass || "active"));
+        b.classList.add(activeClass || "active");
+        state[key] = b.dataset.value;
+        update();
+      });
+    });
+  }
+
+  wire(sizeEls, "size");
+  wire(colorEls, "color");
+  wire(motifEls, "motif");
+
+  msgInput.addEventListener("input", function () { state.message = msgInput.value.trim(); });
+
+  addBtn.addEventListener("click", function () {
+    const size = P.customSizes[state.size];
+    const col = P.customColors[state.color];
+    const motif = P.customMotifs[state.motif];
+    const name = "Custom Chandua — " + motif.label + " in " + col.label;
+    window.CartAPI.add({
+      id: "custom_" + Date.now(),
+      custom: true,
+      name: name,
+      price: size.price,
+      qty: 1,
+      size: state.size,
+      color: state.color,
+      motif: state.motif,
+      message: state.message
+    });
+  });
+
+  update();
+})();
+</script>
+<script>
+/* Pipilika — AI craft assistant (Aruna) */
+(function () {
+  const P = window.PIPILIKA;
+  const fab = document.getElementById("chatFab");
+  const windowEl = document.getElementById("chatWindow");
+  const closeBtn = document.getElementById("chatClose");
+  const headerChatBtn = document.getElementById("chatToggleHeader");
+  const body = document.getElementById("chatBody");
+  const form = document.getElementById("chatForm");
+  const input = document.getElementById("chatText");
+  const suggest = document.getElementById("chatSuggest");
+
+  let pendingTrack = false;   /* chat is waiting for an Order ID */
+
+  const rules = [
+    { keys: ["chandua", "canopy", "what is"], reply: "A **Chandua** is a ceremonial appliqué canopy from Pipili, Odisha, traditionally used to adorn Lord Jagannath's chariot. We make them in 3 sizes — Small (₹1,299), Medium (₹2,299) and Large (₹3,699). They look stunning over weddings, poojas and as statement decor! ✨" },
+    { keys: ["price", "cost", "how much", "rate"], reply: "Our pieces range from ₹699 (pouches) to ₹8,999 (full wedding Chandua sets). The Design-Your-Own Chandua starts at ₹1,299. Everything is hand-stitched to order — you can check the full collection in the Shop section! 🛍" },
+    { keys: ["ship", "deliver", "delivery", "courier"], reply: "We ship worldwide ✈\n• India: 3–5 days\n• International: 7–14 days\n• Custom orders: 4–6 weeks\nShipping is **free** in India on orders above ₹1,500, and free worldwide above ₹8,000." },
+    { keys: ["custom", "bespoke", "design", "personal", "make my own"], reply: "Yes! You can **design your own Chandua** in the Customize section — pick size, colour story, motif and even add a message. Our artisans hand-stitch it just for you. Starts at ₹1,299. 🎨" },
+    { keys: ["payment", "pay", "upi", "cod", "card"], reply: "We accept UPI, cards, and Cash on Delivery (COD) within India. Our checkout is fully secure, and this demo site shows how the flow works. 💳" },
+    { keys: ["artisan", "craft", "made by", "fair", "who make"], reply: "We partner directly with 120+ artisan families in Pipili and Raghurajpur, Odisha. They're paid 2× the fair-trade standard, use natural dyes, and every piece is certified authentic. 🤲" },
+    { keys: ["material", "cotton", "fabric", "dye"], reply: "Everything is 100% cotton, stitched with 100% polyester-free thread? No — pure cotton thread! Colours use natural dyes from flowers, bark and minerals. Gentle hand-wash recommended. 🧵" },
+    { keys: ["order", "track", "status", "where is"], reply: "Great! After you place an order you'll get a **confirmation email + WhatsApp** receipt with an Order ID. Head to the **Track Order** section, enter your Order ID, and you'll see a live map showing the route from Pipili to your city plus how many days remain until delivery. 🗺" },
+    { keys: ["return", "refund", "exchange", "replace"], reply: "We offer free 7-day returns on ready stock. Custom orders are made just for you, so they're non-refundable — but if anything arrives damaged we remake it free of charge. 💛" },
+    { keys: ["gift", "corporate", "bulk", "wholesale"], reply: "We love gifting! Many clients order our tote bags and torans for corporate and wedding gifting. For bulk orders (20+) you get 15% off — just drop us a message in the Contact section. 🎁" },
+    { keys: ["contact", "email", "phone", "reach", "talk"], reply: "You can reach us at hello@pipilika.in or +91 98765 43210. We're based in Pipili, Odisha and reply within 24 hours. 📬" },
+    { keys: ["hello", "hi", "hey", "namaste", "hola"], reply: "Namaste! 🙏 I'm Aruna, your Pipli craft assistant. Ask me about products, prices, shipping, or custom Chandua design — happy to help!" },
+    { keys: ["thank", "thanks", "dhanyawad"], reply: "You're most welcome! 😊 Anything else — maybe a gift suggestion or a shipping question?" },
+    { keys: ["best", "popular", "recommend", "suggest", "top"], reply: "Favourites right now:\n• Classic Jagannath Chandua (₹1,899)\n• Royal Bride Chandua (₹3,299)\n• Sunburst Wall Mandala (₹1,249)\n• Temple Umbrella (₹2,199)\nWant me to tell you more about any of these? 🌟" }
+  ];
+
+  const fallback = "Great question! I'm still learning — you can browse the Shop section or ask about prices, shipping, customization, materials, or gifting. Alternatively email us at hello@pipilika.in. 🤗";
+
+  function replyFor(text) {
+    const t = text.toLowerCase();
+    for (let i = 0; i < rules.length; i++) {
+      if (rules[i].keys.some(k => t.includes(k))) return rules[i].reply;
+    }
+    return fallback;
+  }
+
+  function addMsg(text, cls) {
+    const div = document.createElement("div");
+    div.className = "msg " + cls;
+    div.textContent = text;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+    return div;
+  }
+
+  /* ---- order tracking inside the chat ---- */
+  function loadOrders() { try { return JSON.parse(localStorage.getItem("pipilika_orders")) || []; } catch (e) { return []; } }
+  function addDays(date, n) { const d = new Date(date); d.setDate(d.getDate() + n); return d; }
+  function fdate(d) {
+    return d.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+  }
+  function cite(s) { const el = document.createElement("span"); el.textContent = s; return el.textContent; }
+
+  function trackHTML(order) {
+    const eta = addDays(new Date(order.date), order.days);
+    const today = new Date();
+    const remain = Math.max(0, order.days - Math.round((today - new Date(order.date)) / 86400000));
+    const steps = [
+      ["✅", "Order placed", fdate(new Date(order.date))],
+      ["🧵", "Crafting your piece", fdate(addDays(new Date(order.date), 2))],
+      ["🚚", "Shipped from Pipili", fdate(addDays(new Date(order.date), Math.min(3, order.days - 2)))],
+      ["🏠", "Delivery!", fdate(eta)]
+    ];
+    return '<div class="chat-track"><div class="ct-eta">Arrives in <strong>' + remain +
+      ' day' + (remain === 1 ? "" : "s") + "</strong> on <b>" + fdate(eta) +
+      "</b></div><ul>" + steps.map(s => "<li><span>" + s[0] + "</span><div><b>" + s[1] +
+      "</b><em>" + s[2] + "</em></div></li>").join("") +
+      '</ul><a class="ct-link" href="#track">Open full map &amp; tracking →</a></div>';
+  }
+
+  function addBotHTML(html) {
+    const div = document.createElement("div");
+    div.className = "msg bot chat-html";
+    div.innerHTML = html;
+    body.appendChild(div);
+    body.scrollTop = body.scrollHeight;
+  }
+
+  function botReply(text) {
+    const typing = addMsg("…", "bot typing");
+    setTimeout(function () {
+      typing.remove();
+      addMsg(replyFor(text), "bot");
+    }, 550 + Math.random() * 500);
+  }
+
+  function askForOrderId() {
+    botReply("Sure! 📦 Please tap your order details and type your **Order ID** (it looks like PL-4F2K9Q — you'll find it on your confirmation screen).");
+  }
+
+  function resolveTrack(text) {
+    const clean = text.trim().toUpperCase().replace(/-/g, "").replace(/\s+/g, "");
+    const orders = loadOrders();
+    const byId = orders.find(o => o.id.toUpperCase().replace(/-/g, "") === clean);
+    const bySub = byId || orders.find(o =>
+      clean.length >= 4 && o.id.toUpperCase().replace(/-/g, "").includes(clean.replace(/^PL/, ""))
+    );
+    const found = bySub;
+    if (found) {
+      addBotHTML(trackHTML(found));
+      return true;
+    }
+    addMsg("Hmm, I couldn't find order “" + cite(text) + "”. Please re-check the Order ID. It starts with PL- and was shown right after you placed your order. 😊", "bot");
+    return false;
+  }
+
+  function send(text) {
+    if (!text.trim()) return;
+    addMsg(text, "user");
+    input.value = "";
+
+    const lower = text.toLowerCase();
+
+    /* flow: if we asked for an order ID, the next message is used to look it up */
+    if (pendingTrack) {
+      pendingTrack = false;
+      resolveTrack(text);
+      return;
+    }
+
+    /* tracking intent */
+    if (/\btrack|tracking|track my order|where is my (order|parcel)|delivery (day|date|status)|which day|day delivery|my order status|order status|when (will|do) (i |it |my )?\w* (arrive|deliver|reach)|arriving/.test(lower)) {
+      const orders = loadOrders();
+      if (orders.length) {
+        /* if an ID-like token was given, try to resolve it directly */
+        const id = text.match(/PL-?[A-Z0-9]{4,}/i);
+        if (id && resolveTrack(id[0])) return;
+      }
+      pendingTrack = true;
+      askForOrderId();
+      return;
+    }
+
+    botReply(text);
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    send(input.value);
+  });
+
+  suggest.addEventListener("click", function (e) {
+    const b = e.target.closest(".sug"); if (!b) return;
+    send(b.textContent.replace(/^[^ ]+ /, "")); /* strip leading emoji+space */
+  });
+
+  function toggle(open) {
+    windowEl.classList.toggle("open", open);
+  }
+  fab.addEventListener("click", function () { toggle(!windowEl.classList.contains("open")); });
+  closeBtn.addEventListener("click", function () { toggle(false); });
+  headerChatBtn.addEventListener("click", function () { toggle(true); });
+})();
+</script>
+<script>
+/* Pipilika — global wiring: nav, scroll reveal, forms */
+(function () {
+  const navToggle = document.getElementById("navToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  navToggle.addEventListener("click", function () {
+    navToggle.classList.toggle("open");
+    navLinks.classList.toggle("open");
+  });
+  navLinks.querySelectorAll("a").forEach(a =>
+    a.addEventListener("click", function () {
+      navToggle.classList.remove("open");
+      navLinks.classList.remove("open");
+    })
+  );
+
+  /* sticky header shadow */
+  const header = document.getElementById("siteHeader");
+  window.addEventListener("scroll", function () {
+    header.classList.toggle("scrolled", window.scrollY > 20);
+  }, { passive: true });
+
+  /* scroll reveal */
+  const io = new IntersectionObserver(function (entries) {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add("visible");
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  /* contact + newsletter forms (demo) */
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    this.reset();
+    toastMsg("Message sent! We’ll reply within 24 hours. 💌");
+  });
+  document.getElementById("newsForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    this.reset();
+    toastMsg("Subscribed! Monthly craft stories incoming. 📬");
+  });
+
+  function toastMsg(m) {
+    const t = document.getElementById("toast");
+    t.textContent = m;
+    t.classList.add("show");
+    clearTimeout(toastMsg._t);
+    toastMsg._t = setTimeout(function () { t.classList.remove("show"); }, 2600);
+  }
+})();
+</script>
+
+</body>
+</html>

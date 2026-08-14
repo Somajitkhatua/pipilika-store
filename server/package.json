@@ -1,0 +1,19 @@
+{
+  "name": "pipilika-server",
+  "version": "1.0.0",
+  "description": "Pipilika Pipli appliqué store — order emails + API backend",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.14"
+  }
+}
