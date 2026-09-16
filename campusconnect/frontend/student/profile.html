@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - CampusConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold text-primary" href="../index.html"><i class="fa-solid fa-graduation-cap me-2"></i>CampusConnect</a>
+            <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar shadow-sm py-4" style="min-height: 90vh;">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="dashboard.html"><i class="fa-solid fa-chart-line me-2"></i>Dashboard</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="opportunities.html"><i class="fa-solid fa-briefcase me-2"></i>Opportunities</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="applications.html"><i class="fa-solid fa-file-lines me-2"></i>My Applications</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link text-dark" href="resume.html"><i class="fa-solid fa-robot me-2"></i>AI Resume Matcher</a></li>
+                    <li class="nav-item mb-2"><a class="nav-link active text-primary fw-bold" href="profile.html"><i class="fa-solid fa-user me-2"></i>Profile</a></li>
+                </ul>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <h2 class="fw-bold mb-4">Student Profile</h2>
+
+                <div id="alert-box" class="alert d-none"></div>
+
+                <div class="card p-4">
+                    <form id="profile-form">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">College</label>
+                                <input type="text" id="college" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Degree</label>
+                                <input type="text" id="degree" class="form-control" placeholder="B.Tech / MCA">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Branch</label>
+                                <input type="text" id="branch" class="form-control" placeholder="Computer Science">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Graduation Year</label>
+                                <input type="number" id="graduationYear" class="form-control" placeholder="2026">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">CGPA</label>
+                                <input type="number" step="0.01" id="cgpa" class="form-control" placeholder="8.5">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Phone</label>
+                                <input type="text" id="phone" class="form-control" placeholder="9876543210">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Skills (comma separated)</label>
+                            <input type="text" id="skills" class="form-control" placeholder="Java, Spring Boot, MySQL, React, Git">
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">GitHub URL</label>
+                                <input type="text" id="githubUrl" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">LinkedIn URL</label>
+                                <input type="text" id="linkedinUrl" class="form-control">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary px-4">Save Profile</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const profile = await apiRequest('/students/profile', 'GET');
+                document.getElementById('college').value = profile.college || '';
+                document.getElementById('degree').value = profile.degree || '';
+                document.getElementById('branch').value = profile.branch || '';
+                document.getElementById('graduationYear').value = profile.graduationYear || '';
+                document.getElementById('cgpa').value = profile.cgpa || '';
+                document.getElementById('phone').value = profile.phone || '';
+                document.getElementById('skills').value = profile.skills || '';
+                document.getElementById('githubUrl').value = profile.githubUrl || '';
+                document.getElementById('linkedinUrl').value = profile.linkedinUrl || '';
+            } catch (err) {
+                console.error(err);
+            }
+
+            document.getElementById('profile-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const payload = {
+                    college: document.getElementById('college').value,
+                    degree: document.getElementById('degree').value,
+                    branch: document.getElementById('branch').value,
+                    graduationYear: parseInt(document.getElementById('graduationYear').value) || null,
+                    cgpa: parseFloat(document.getElementById('cgpa').value) || null,
+                    phone: document.getElementById('phone').value,
+                    skills: document.getElementById('skills').value,
+                    githubUrl: document.getElementById('githubUrl').value,
+                    linkedinUrl: document.getElementById('linkedinUrl').value
+                };
+
+                const alertBox = document.getElementById('alert-box');
+                try {
+                    await apiRequest('/students/profile', 'PUT', payload);
+                    alertBox.className = 'alert alert-success';
+                    alertBox.textContent = 'Profile updated successfully!';
+                    alertBox.classList.remove('d-none');
+                } catch (err) {
+                    alertBox.className = 'alert alert-danger';
+                    alertBox.textContent = err.message || 'Failed to update profile';
+                    alertBox.classList.remove('d-none');
+                }
+            });
+        });
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = '../login.html';
+        }
+    </script>
+</body>
+</html>

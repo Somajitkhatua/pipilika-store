@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - CampusConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light d-flex align-items-center py-5" style="min-height: 100vh;">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 shadow-lg">
+                    <div class="text-center mb-4">
+                        <h3 class="fw-bold text-primary">CampusConnect</h3>
+                        <p class="text-muted">Create your account</p>
+                    </div>
+
+                    <div id="error-alert" class="alert alert-danger d-none" role="alert"></div>
+
+                    <form id="register-form">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name / Company Name</label>
+                            <input type="text" id="name" class="form-control" required placeholder="John Doe or ABC Corp">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email address</label>
+                            <input type="email" id="email" class="form-control" required placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" id="password" class="form-control" required placeholder="••••••••">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Register As</label>
+                            <select id="role" class="form-select" onchange="toggleRoleFields()">
+                                <option value="STUDENT">Student</option>
+                                <option value="RECRUITER">Recruiter</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 d-none" id="college-group">
+                            <label class="form-label">College Name</label>
+                            <input type="text" id="college" class="form-control" placeholder="NIT / IIT / University">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2">Register</button>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <p class="text-muted">Already have an account? <a href="login.html" class="text-primary text-decoration-none fw-bold">Login</a></p>
+                        <a href="index.html" class="text-muted small text-decoration-none">← Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        function toggleRoleFields() {
+            const role = document.getElementById('role').value;
+            const collegeGroup = document.getElementById('college-group');
+            if (role === 'STUDENT') {
+                collegeGroup.classList.remove('d-none');
+            } else {
+                collegeGroup.classList.add('d-none');
+            }
+        }
+
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+            const college = document.getElementById('college').value;
+            const alertBox = document.getElementById('error-alert');
+            alertBox.classList.add('d-none');
+
+            const payload = { name, email, password, role };
+            if (role === 'STUDENT') payload.college = college;
+            else payload.companyName = name;
+
+            try {
+                const response = await apiRequest('/auth/register', 'POST', payload, false);
+                localStorage.setItem('token', response.token);
+                localStorage.setItem('role', response.role);
+                localStorage.setItem('name', response.name);
+                localStorage.setItem('email', response.email);
+                localStorage.setItem('userId', response.userId);
+
+                if (response.role === 'STUDENT') {
+                    window.location.href = 'student/dashboard.html';
+                } else if (response.role === 'RECRUITER') {
+                    window.location.href = 'recruiter/dashboard.html';
+                }
+            } catch (err) {
+                alertBox.textContent = err.message || 'Registration failed';
+                alertBox.classList.remove('d-none');
+            }
+        });
+    </script>
+</body>
+</html>

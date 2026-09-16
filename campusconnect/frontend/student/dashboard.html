@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - CampusConnect</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold text-primary" href="../index.html">
+                <i class="fa-solid fa-graduation-cap me-2"></i>CampusConnect <span class="badge bg-secondary fs-6">Student</span>
+            </a>
+            <div class="d-flex align-items-center">
+                <span class="me-3 fw-bold" id="user-greeting">Welcome</span>
+                <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse shadow-sm py-4" style="min-height: 90vh;">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a class="nav-link active text-primary fw-bold" href="dashboard.html"><i class="fa-solid fa-chart-line me-2"></i>Dashboard</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link text-dark" href="opportunities.html"><i class="fa-solid fa-briefcase me-2"></i>Opportunities</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link text-dark" href="applications.html"><i class="fa-solid fa-file-lines me-2"></i>My Applications</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link text-dark" href="resume.html"><i class="fa-solid fa-robot me-2"></i>AI Resume Matcher</a></li>
+                        <li class="nav-item mb-2"><a class="nav-link text-dark" href="profile.html"><i class="fa-solid fa-user me-2"></i>Profile</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2 fw-bold">Student Dashboard</h1>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="row text-white mb-4">
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-primary p-3">
+                            <h5 class="card-title">Applied Opportunities</h5>
+                            <h3 class="fw-bold" id="stat-applied">0</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-success p-3">
+                            <h5 class="card-title">Shortlisted</h5>
+                            <h3 class="fw-bold" id="stat-shortlisted">0</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card bg-info p-3">
+                            <h5 class="card-title">Selected</h5>
+                            <h3 class="fw-bold" id="stat-selected">0</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Opportunities / Recommendations -->
+                <div class="card p-4">
+                    <h4 class="fw-bold mb-3">Recommended Opportunities</h4>
+                    <div class="row" id="recommended-opportunities">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const name = localStorage.getItem('name');
+            document.getElementById('user-greeting').textContent = `Welcome, ${name || 'Student'}`;
+
+            try {
+                const apps = await apiRequest('/applications/my', 'GET');
+                document.getElementById('stat-applied').textContent = apps.length;
+                document.getElementById('stat-shortlisted').textContent = apps.filter(a => a.status === 'SHORTLISTED').length;
+                document.getElementById('stat-selected').textContent = apps.filter(a => a.status === 'SELECTED').length;
+
+                const opportunities = await apiRequest('/opportunities', 'GET', null, false);
+                const container = document.getElementById('recommended-opportunities');
+                container.innerHTML = opportunities.slice(0, 3).map(opp => `
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 p-3 border">
+                            <span class="badge bg-primary mb-2">${opp.type}</span>
+                            <h5 class="fw-bold">${opp.title}</h5>
+                            <p class="text-muted small">${opp.companyName} • ${opp.location}</p>
+                            <p class="text-success fw-bold">${opp.salary || 'Competitive'}</p>
+                            <a href="opportunities.html" class="btn btn-outline-primary btn-sm mt-auto">View Details</a>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (err) {
+                console.error(err);
+            }
+        });
+
+        function logout() {
+            localStorage.clear();
+            window.location.href = '../login.html';
+        }
+    </script>
+</body>
+</html>
